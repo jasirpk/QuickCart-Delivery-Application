@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quick_cart/common/style.dart';
 
 class CustomCardWidget extends StatelessWidget {
   final String text;
@@ -31,7 +32,7 @@ class CustomCardWidget extends StatelessWidget {
                   width: 50,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(4),
-                    color: const Color.fromARGB(255, 172, 52, 193),
+                    color: customPurple,
                   ),
                   child: Center(
                     child: Text(

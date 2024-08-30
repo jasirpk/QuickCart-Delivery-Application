@@ -1,15 +1,23 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:quick_cart/common/assigns.dart';
 import 'package:quick_cart/common/style.dart';
-import 'package:quick_cart/view/components/custom_card.dart';
-import 'package:quick_cart/view/components/custom_single_card.dart';
+import 'package:quick_cart/view/components/silvers/button_silver.dart';
+import 'package:quick_cart/view/components/silvers/craze_silver.dart';
+import 'package:quick_cart/view/components/silvers/delivery_shop_silver.dart';
+import 'package:quick_cart/view/components/silvers/delivery_shop_single_silver.dart';
+import 'package:quick_cart/view/components/silvers/nerby_silver.dart';
+import 'package:quick_cart/view/components/silvers/refer_silver.dart';
+import 'package:quick_cart/view/components/silvers/search_field_silver.dart';
+import 'package:quick_cart/view/components/silvers/top_picker_silver.dart';
+import 'package:quick_cart/view/components/silvers/trending_silver.dart';
+import 'package:quick_cart/view/components/widgets/custom_headline.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         title: Row(
@@ -31,119 +39,76 @@ class HomeScreen extends StatelessWidget {
           ],
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Container(
-                  height: 50,
-                  width: 270,
-                  decoration: BoxDecoration(
-                      color: Colors.black12,
-                      borderRadius: BorderRadius.circular(6)),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        Assigns.FieldInputLabel,
-                        style: TextStyle(
-                            fontSize: 16, fontWeight: FontWeight.w300),
-                      ),
-                      SizedBox(width: 10),
-                      Icon(
-                        CupertinoIcons.search,
-                        color: myColor,
-                      ),
-                    ],
-                  ),
-                ),
-                CircleAvatar(
-                  backgroundColor: Colors.white,
-                  maxRadius: 13,
-                  backgroundImage: AssetImage(Assigns.notification),
-                ),
-                Icon(
-                  Icons.sell_outlined,
-                  color: Colors.yellow,
-                  size: 30,
-                ),
-              ],
-            ),
-            SizedBox(height: 40),
-            Text(
-              Assigns.FirstHeadLine,
-              style: TextStyle(
-                fontFamily: Assigns.fontFamily,
-                fontSize: 20,
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SearchFieldSilver(),
+              SizedBox(height: 40),
+              CustomHeadLIneTextWidget(
+                text: Assigns.FirstHeadLine,
               ),
-            ),
-            SizedBox(height: 10),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                CustomCardWidget(
-                  subText: Assigns.delivery,
-                  text: Assigns.percentage,
-                  image: Assigns.deliveryImaage,
-                ),
-                CustomCardWidget(
-                  subText: Assigns.medicine,
-                  text: Assigns.percentage,
-                  image: Assigns.medineImage,
-                ),
-                CustomCardWidget(
-                  subText: Assigns.petText,
-                  text: Assigns.percentage,
-                  image: Assigns.petImage,
-                ),
-                CustomSingleCard(
-                  image: Assigns.giftImage,
-                  text: Assigns.gift,
-                ),
-              ],
-            ),
-            SizedBox(height: 20),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                CustomSingleCard(
-                  image: Assigns.meatImage,
-                  text: Assigns.meatText,
-                ),
-                CustomSingleCard(
-                  image: Assigns.cosmeticImage,
-                  text: Assigns.cosmetic,
-                ),
-                CustomSingleCard(
-                  image: Assigns.stationaryImage,
-                  text: Assigns.stationary,
-                ),
-                CustomCardWidget(
-                  subText: Assigns.store,
-                  text: Assigns.percentage,
-                  image: Assigns.storeImage,
-                ),
-              ],
-            ),
-            SizedBox(height: 5),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  Assigns.more,
-                  style: TextStyle(color: myColor, fontWeight: FontWeight.w500),
-                ),
-                Icon(
-                  Icons.keyboard_arrow_down,
-                  color: myColor,
-                )
-              ],
-            )
-          ],
+              SizedBox(height: 10),
+              DeliveryShopSilver(),
+              SizedBox(height: 20),
+              DeliverShopsSingleSiver(),
+              SizedBox(height: 5),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    Assigns.more,
+                    style:
+                        TextStyle(color: myColor, fontWeight: FontWeight.w500),
+                  ),
+                  Icon(
+                    Icons.keyboard_arrow_down,
+                    color: myColor,
+                  )
+                ],
+              ),
+              SizedBox(height: 10),
+              CustomHeadLIneTextWidget(
+                text: Assigns.secondHeadLine,
+              ),
+              SizedBox(height: 10),
+              TopPicksSilver(screenWidth: screenWidth),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  CustomHeadLIneTextWidget(text: Assigns.thirdHeadLine),
+                  Text(
+                    Assigns.seeAll,
+                    style: TextStyle(color: myColor, fontSize: 18),
+                  ),
+                ],
+              ),
+              SizedBox(height: 10),
+              TrendingSilver(),
+              SizedBox(height: 10),
+              CustomHeadLIneTextWidget(text: Assigns.crazeDeals),
+              CrazeDealSilver(screenWidth: screenWidth),
+              SizedBox(height: 20),
+              ReferSilver(),
+              SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  CustomHeadLIneTextWidget(text: Assigns.nearByStore),
+                  Text(
+                    Assigns.seeAll,
+                    style: TextStyle(color: myColor, fontSize: 18),
+                  ),
+                ],
+              ),
+              SizedBox(width: 10),
+              NearBySilver(),
+              SizedBox(height: 20),
+              ViewAllButtonSilver()
+            ],
+          ),
         ),
       ),
     );
