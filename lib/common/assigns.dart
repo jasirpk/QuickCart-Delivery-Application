@@ -1,0 +1,29 @@
+class Assigns {
+  static String home = 'Home';
+  static String cart = 'Cart';
+  static String order = 'My Order';
+  static String account = 'Account';
+  static String location = 'ABCD, New Delhi';
+  static String FieldInputLabel = 'Search for products/stores';
+  static String notification = 'assets/images/notification.png';
+  static String FirstHeadLine = 'What would you like to do today?';
+  static String fontFamily = 'Quicksand';
+  static String delivery = 'Food\n Delivery';
+  static String percentage = '10% off';
+  static String deliveryImaage = 'assets/images/delivery.png';
+  static String medicine = 'Medicines\n';
+  static String medineImage = 'assets/images/medicines.png';
+  static String petText = 'Pet\nSupplies';
+  static String petImage = 'assets/images/pet_supply.png';
+  static String giftImage = 'assets/images/gifts.png';
+  static String gift = 'Gifts\n';
+  static String meatImage = 'assets/images/meat.png';
+  static String meatText = 'Meat\n';
+  static String cosmeticImage = 'assets/images/cosmetic.png';
+  static String cosmetic = 'Cosmetic\n';
+  static String stationaryImage = 'assets/images/stationery.png';
+  static String stationary = 'Stationery\n';
+  static String store = 'Stores\n';
+  static String storeImage = 'assets/images/store.png';
+  static String more = 'More';
+}
