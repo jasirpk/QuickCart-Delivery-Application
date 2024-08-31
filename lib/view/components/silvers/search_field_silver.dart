@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:quick_cart/common/assigns.dart';
 import 'package:quick_cart/common/style.dart';
+import 'package:quick_cart/view/pages/notifications.dart';
 
 class SearchFieldSilver extends StatelessWidget {
   const SearchFieldSilver({
@@ -33,10 +34,16 @@ class SearchFieldSilver extends StatelessWidget {
             ],
           ),
         ),
-        CircleAvatar(
-          backgroundColor: Colors.white,
-          maxRadius: 13,
-          backgroundImage: AssetImage(Assigns.notification),
+        InkWell(
+          onTap: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (ctx) => NotificationScreen()));
+          },
+          child: CircleAvatar(
+            backgroundColor: Colors.white,
+            maxRadius: 13,
+            backgroundImage: AssetImage(Assigns.notification),
+          ),
         ),
         Icon(
           Icons.sell_outlined,

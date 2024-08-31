@@ -40,6 +40,7 @@ dependencies:
   shimmer: ^3.0.0
   provider: ^6.1.2
   cached_network_image: ^3.4.1
+  timeago: ^3.7.0
 
 dev_dependencies:
   flutter_test:
@@ -83,7 +84,7 @@ flutter:
         - asset: assets/fonts/Quicksand-SemiBold.ttf
           weight: 400
         - asset: assets/fonts/Quicksand-Bold.ttf
-          weight: 800    
+          weight: 600    
   #         style: italic
     # - family: Quicksand
     #   fonts:

@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:quick_cart/model/custom_time.dart';
 import 'package:quick_cart/view/pages/bottom_bar.dart';
 import 'package:quick_cart/view_model/bottom_navbar.dart';
+import 'package:timeago/timeago.dart' as timeago;
 
 void main() {
+  timeago.setLocaleMessages('custom', CustomMessages());
   runApp(MultiProvider(providers: [
     ChangeNotifierProvider(
       create: (_) => BottomNavbarState(),

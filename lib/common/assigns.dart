@@ -1,3 +1,5 @@
+//  All data identifiers are established here...!
+
 class Assigns {
   static String home = 'Home';
   static String cart = 'Cart';
@@ -56,4 +58,9 @@ class Assigns {
   static String itemsImage = 'assets/images/grocery.png';
   static String itemsImg = '3400+ items available';
   static String viewLastButton = 'View all stores';
+  static String endPoint =
+      'https://raw.githubusercontent.com/shabeersha/test-api/main/test-notifications.json';
+  static String baseUrl =
+      'https://raw.githubusercontent.com/shabeersha/test-api/main/';
+  static String notifications = 'Notifications';
 }
